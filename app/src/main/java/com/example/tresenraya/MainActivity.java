@@ -580,7 +580,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         resultadoMostrado = true;
-
+        //Guarda el resultado unicamente si es jugador vs bot
+        registrarEstadisticas(resultado);
 
         Intent intent = new Intent(
                 MainActivity.this,
@@ -649,6 +650,35 @@ public class MainActivity extends AppCompatActivity {
             finish();
 
         }, 900);
+    }
+
+    private void registrarEstadisticas(String resultado){
+        //Solo registra partidas de Jugador vs Maquina
+        if(!modoJuego.equals("MAQUINA")){
+            return;
+        }
+        SharedPreferences estadisticas = getSharedPreferences("EstadisticasJugadorvsMaquina", MODE_PRIVATE);
+        int partidasGanadas = estadisticas.getInt("partidas_ganadas", 0);
+        int partidasJugadas = estadisticas.getInt("partidas_jugadas", 0);
+        int rachaVictorias = estadisticas.getInt("racha_victorias", 0);
+
+        //Toda victoria, derrota o empate cuenta como partida jugada
+        partidasJugadas++;
+
+        boolean ganoElHumano = resultado.equals("GANADOR") && juego.getGanador() == simboloHumano;
+        if(ganoElHumano){
+            partidasGanadas++;
+            rachaVictorias++;
+        } else{
+            //Una derrota o empate interrumpe la racha
+            rachaVictorias = 0;
+        }
+
+        estadisticas.edit()
+                .putInt("partidas_jugadas", partidasJugadas)
+                .putInt("partidas_ganadas", partidasGanadas)
+                .putInt("racha_victorias", rachaVictorias)
+                .apply();
     }
 
     private void nuevaPartida() {

@@ -187,6 +187,51 @@
         app:layout_constraintVertical_bias="0.636"
         app:srcCompat="@drawable/seccion_racha_victorias" />
 
+    <TextView
+        android:id="@+id/txtParticulasGanadas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingTop="28dp"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnPartidasGanadas"
+        app:layout_constraintEnd_toEndOf="@id/btnPartidasGanadas"
+        app:layout_constraintStart_toStartOf="@id/btnPartidasGanadas"
+        app:layout_constraintTop_toTopOf="@id/btnPartidasGanadas"
+        tools:text="0"/>
+
+    <TextView
+        android:id="@+id/txtPartidasJugadas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingTop="28dp"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnPartidasJugadas"
+        app:layout_constraintEnd_toEndOf="@id/btnPartidasJugadas"
+        app:layout_constraintStart_toStartOf="@id/btnPartidasJugadas"
+        app:layout_constraintTop_toTopOf="@id/btnPartidasJugadas"
+        tools:text="0"/>
+
+    <TextView
+        android:id="@+id/txtRachaVictorias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingTop="28dp"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnRachaVictorias"
+        app:layout_constraintEnd_toEndOf="@id/btnRachaVictorias"
+        app:layout_constraintStart_toStartOf="@id/btnRachaVictorias"
+        app:layout_constraintTop_toTopOf="@id/btnRachaVictorias"
+        tools:text="0"/>
+    
     <ImageButton
         android:id="@+id/btnVolver"
         android:layout_width="161dp"
