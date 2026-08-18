@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TresEnRaya"
+rootProject.name = "ED_P3_Grupo02"
 include(":app")
  
